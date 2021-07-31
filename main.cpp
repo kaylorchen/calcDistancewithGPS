@@ -4,18 +4,18 @@
 
 const double earth_r = 6371393;
 
-double calcDistance(double x_longtitude, double x_latitude, double x_height, double y_longtitude, double y_latitude,
+double calcDistance(double x_longitude, double x_latitude, double x_height, double y_longitude, double y_latitude,
                     double y_height) {
-    double longtitude_rad = M_PI * x_longtitude / 180.0;
+    double longitude_rad = M_PI * x_longitude / 180.0;
     double latitude_rad = M_PI * x_latitude / 180.0;
     double x[3], y[3];
-    x[0] = cos(latitude_rad) * cos(longtitude_rad);
-    x[1] = cos(latitude_rad) * sin(longtitude_rad);
+    x[0] = cos(latitude_rad) * cos(longitude_rad);
+    x[1] = cos(latitude_rad) * sin(longitude_rad);
     x[2] = sin(latitude_rad);
-    longtitude_rad = M_PI * y_longtitude / 180.0;
+    longitude_rad = M_PI * y_longitude / 180.0;
     latitude_rad = M_PI * y_latitude / 180.0;
-    y[0] = cos(latitude_rad) * cos(longtitude_rad);
-    y[1] = cos(latitude_rad) * sin(longtitude_rad);
+    y[0] = cos(latitude_rad) * cos(longitude_rad);
+    y[1] = cos(latitude_rad) * sin(longitude_rad);
     y[2] = sin(latitude_rad);
     double alpha = 0;
     for (int i = 0; i < 3; ++i) {
